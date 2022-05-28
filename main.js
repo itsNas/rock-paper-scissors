@@ -10,11 +10,11 @@
 
 // 6. Write a function called game(). Called the playRound function to play the game. The game will  be 5 rounds. *Hint* use for loops
 
-const choices = ["rock", "paper", "scissors"]
+
 
 function computerPlay() {
+    const choices = ["rock", "paper", "scissors"]
     return choices[Math.floor(Math.random() * choices.length)];
-
 }
 
 function playerPlay() {
