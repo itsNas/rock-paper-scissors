@@ -17,50 +17,55 @@ function computerPlay() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-function playerPlay() {
-    let input = prompt("Choose Rock, Paper, Scissors")
-    input = input.toLowerCase();
 
-    if ((input === "rock") || (input === "paper") || (input === "scissors")) {
-        return input;
-    } else {
-        prompt("Wrong choice, please choose Rock, Paper or Scissors")
-    }
-    return input;
-}
+//function playerPlay() {
+//    let input = prompt("Choose Rock, Paper, Scissors")
+//    input = input.toLowerCase();
+//
+//   if ((input === "rock") || (input === "paper") || (input === "scissors")) {
+//        return input;
+//    } else {
+//        prompt("Wrong choice, please choose Rock, Paper or Scissors")
+//    }
+//   return input;
+//}
 
-function determineWinner(playerChoice, computerChoice) {
-    if (playerChoice === computerChoice) {
-        return "Tie";
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        console.log('You:' + playerSelection + '' + '||' + '' + 'Computer:' + computerSelection);
+        console.log('Its a tie!');
     } else if (
-        (playerChoice === "rock" && computerChoice === "scissors") ||
-        (playerChoice === "paper" && computerChoice === "rock") ||
-        (playerChoice === "scissors" && computerChoice === "paper")
+        (playerSelection === "rock" && computerSelection === "scissors") ||
+        (playerSelection === "paper" && computerSelection === "rock") ||
+        (playerSelection === "scissors" && computerSelection === "paper")
     ) {
-        return "You Win!!!";
+        playerPoint = 1;
+        console.log('You:' + playerSelection + '' + '||' + '' + 'Computer:' + computerSelection);
+        console.log('You win' + playerSelection + 'beats' + computerSelection)
     } else {
-        return "Computer win!!!";
+        console.log('You:' + playerSelection + '' + '||' + '' + 'Computer:' + computerSelection);
+        console.log('You lose,' + computerSelection + 'beats' + playerSelection)
     }
 }
 
-function displayResult() {
+//function displayResult() {
 
-}
+//}
 
-function playRound() {
-    const computerSelection = computerPlay();
-    console.log("Computer choose:" + (computerSelection));
-    const playerSelection = playerPlay();
-    console.log("You choose:" + (playerSelection));
-    const winnerSelection = determineWinner(playerSelection, computerSelection);
-    console.log(winnerSelection);
-    console.log("--------------------------------")
-}
+//function playRound() {
+//    const computerSelection = computerPlay();
+//    console.log("Computer choose:" + (computerSelection));
+//    const playerSelection = playerPlay();
+//    console.log("You choose:" + (playerSelection));
+//    const winnerSelection = determineWinner(computerSelection);
+//    console.log(winnerSelection);
+//    console.log("--------------------------------")
+//}
 
 function game() {
-    for (let i = 1; i <= 5; i++) {
-        playRound();
-    }
+    //   for (let i = 1; i <= 5; i++) {
+    playRound();
+    //   }
 
 }
 
