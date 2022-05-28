@@ -17,22 +17,25 @@ function computerPlay() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
+function lowerCase(string) {
+    return string.toLowerCase()
+}
 
-//function playerPlay() {
-//    let input = prompt("Choose Rock, Paper, Scissors")
-//    input = input.toLowerCase();
-//
-//   if ((input === "rock") || (input === "paper") || (input === "scissors")) {
-//        return input;
-//    } else {
-//        prompt("Wrong choice, please choose Rock, Paper or Scissors")
-//    }
-//   return input;
-//}
+function playerPlay() {
+    let input = prompt("Choose Rock, Paper, Scissors")
+    input = lowerCase(input);
+
+    if ((input === "rock") || (input === "paper") || (input === "scissors")) {
+        return input;
+    } else {
+        alert("Wrong choice, please choose Rock, Paper or Scissors")
+    }
+    return input;
+}
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        console.log('You:' + playerSelection + '' + '||' + '' + 'Computer:' + computerSelection);
+        console.log('You choose:' + playerSelection + ' ' + '||' + ' ' + 'Computer choose:' + computerSelection);
         console.log('Its a tie!');
     } else if (
         (playerSelection === "rock" && computerSelection === "scissors") ||
@@ -40,11 +43,11 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "scissors" && computerSelection === "paper")
     ) {
         playerPoint = 1;
-        console.log('You:' + playerSelection + '' + '||' + '' + 'Computer:' + computerSelection);
-        console.log('You win' + playerSelection + 'beats' + computerSelection)
+        console.log('You choose:' + playerSelection + ' ' + '||' + ' ' + 'Computer choose:' + computerSelection);
+        console.log('You win,' + ' ' + playerSelection + ' ' + 'beats' + ' ' + computerSelection)
     } else {
-        console.log('You:' + playerSelection + '' + '||' + '' + 'Computer:' + computerSelection);
-        console.log('You lose,' + computerSelection + 'beats' + playerSelection)
+        console.log('You choose:' + playerSelection + ' ' + '||' + ' ' + 'Computer choose:' + computerSelection);
+        console.log('You lose,' + ' ' + playerSelection + ' ' + 'beats' + ' ' + computerSelection)
     }
 }
 
@@ -63,10 +66,11 @@ function playRound(playerSelection, computerSelection) {
 //}
 
 function game() {
-    //   for (let i = 1; i <= 5; i++) {
-    playRound();
-    //   }
 
+    const computerSelection = computerPlay();
+    console.log(computerSelection)
+    const playerSelection = playerPlay();
+    const roundResults = playRound(playerSelection, computerSelection);;
 }
 
 game();
