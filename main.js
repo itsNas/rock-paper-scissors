@@ -14,7 +14,7 @@ function playerPlay() {
     if (input === "rock" || input === "paper" || input === "scissors") {
         return input;
     } else {
-        alert("Wrong choice, please choose Rock, Paper or Scissors");
+        alert("Wrong input, please choose Rock, Paper or Scissors");
     }
     return input;
 }
@@ -37,7 +37,7 @@ function playRound(playerSelection, computerSelection) {
         log = "player";
     } else {
         console.log("You choose:" + playerSelection + " " + "||" + " " + "Computer choose:" + computerSelection);
-        console.log("Computer win the round," + " " + playerSelection + " " + "beats" + " " + computerSelection);
+        console.log("Computer win the round," + " " + computerSelection + " " + "beats" + " " + playerSelection);
         console.log("**********************************************");
         log = "computer!";
     }
@@ -59,15 +59,15 @@ function game() {
             computerScore++;
         }
     }
-    console.log(
-        "Player Score:" +
-        playerScore +
-        " " +
-        "||" +
-        " " +
-        "Computer Score:" +
-        computerScore
-    );
-}
+    console.log('*************** Final Result *****************')
+    console.log("Player Score:" + playerScore + " " + "||" + " " + "Computer Score:" + computerScore);
 
+    if (playerScore > computerScore) {
+        console.log('You win the game!');
+    } else if (playerScore < computerScore) {
+        console.log('You lose the game!');
+    } else {
+        console.log('Its a tie!')
+    }
+}
 game();
