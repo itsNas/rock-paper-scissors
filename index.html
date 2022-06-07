@@ -8,9 +8,36 @@
     <title>Rock Paper Scissors</title>
 
 </head>
+<!--create a header-->
+<!--create div for main-->
+<!--inside main will have instructions ui, score and player selection button-->
+<!--add footer and replay button if you want-->
 
 <body>
-    <h1>ROCK PAPER SCISSORS</h1>
+    <header>
+        <h1>ROCK PAPER SCISSORS</h1>
+    </header>
+    <main>
+        <div class="scoreboard">
+            <h2 class="score-info" id="scoreInfo">Jan Ken Pon</h2>
+            <h3 class="score-message" id="scoreMessage">Win 5 round to win the game</h3>
+        </div>
+        <div class="score-container">
+            <div class="score-box">
+                <div class="sign" id="playerSign">❔</div>
+                <p class="score" id="playerScore">Player : 0</p>
+            </div>
+            <div class="score-box">
+                <div class="sign" id="computerSign">❔</div>
+                <p class="score" id="computerScore">Computer : 0</p>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="btn-sqr" id="rockBtn">✊</button>
+            <button class="btn-sqr" id="paperBtn">🤚</button>
+            <button class="btn-sqr" id="scissorsBtn">✌️</button>
+        </div>
+    </main>
 </body>
 <script src="main.js"></script>
 
