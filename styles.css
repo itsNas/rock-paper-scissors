@@ -6,10 +6,12 @@ body {
 header {
     display: flex;
     justify-content: center;
+    font-size: 1.5rem;
 }
 
 .scoreboard {
     text-align: center;
+    font-size: 1.5rem;
 }
 
 .score-container {
@@ -22,7 +24,7 @@ header {
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 50px;
 }
 
 .btn-sqr {
@@ -37,6 +39,17 @@ header {
 
 .btn-sqr:hover {
     transform: scale(1.4);
+}
+
+.score-box {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.modal {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 50px;
 }
 
 /* .selections {
