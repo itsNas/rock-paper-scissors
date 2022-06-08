@@ -20,19 +20,29 @@ function getComputerChoice() {
     return choices[randomChoice]
 }
 
-// add function isWin(),isLose(),isDraw
-function isWin() {
+function getCapitalLetter(string) {
+    if (string === "rock") return "Rock";
+    if (string === "paper") return "Paper";
+    return "Scissors";
+}
+
+function isWin(playerChoice, computerChoice) {
     playerScore++;
     playerScore_span.textContent = playerScore;
+    resultInfo_h2.textContent = "You win!"
+    resultMessage_h3.textContent = `${getCapitalLetter(playerChoice)} beats ${getCapitalLetter(computerChoice)}`
 }
 
-function isLose() {
+function isLose(playerChoice, computerChoice) {
     computerScore++;
     computerScore_span.textContent = computerScore;
+    resultInfo_h2.textContent = "You lose!"
+    resultMessage_h3.textContent = `${getCapitalLetter(computerChoice)} beats ${getCapitalLetter(playerChoice)}`
 }
 
-function isDraw() {
-    console.log("DRAW")
+function isDraw(computerChoice) {
+    resultInfo_h2.textContent = "Draw!"
+    resultMessage_h3.textContent = `You both chose ${getCapitalLetter(computerChoice)}`
 }
 
 //add function game(). THis function will run the game logic
@@ -44,17 +54,17 @@ function game(playerChoice) {
         case "rock scissors":
         case "paper rock":
         case "scissors paper":
-            isWin()
+            isWin(playerChoice, computerChoice);
             break;
         case "rock paper":
         case "paper scissors":
         case "scissors rock":
-            isLose()
+            isLose(playerChoice, computerChoice)
             break;
         case "rock rock":
         case "paper paper":
         case "scissors scissors":
-            isDraw()
+            isDraw(computerChoice)
             break;
     }
 }
