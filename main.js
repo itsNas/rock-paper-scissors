@@ -20,6 +20,21 @@ function getComputerChoice() {
     return choices[randomChoice]
 }
 
+// add function isWin(),isLose(),isDraw
+function isWin() {
+    playerScore++;
+    playerScore_span.textContent = playerScore;
+}
+
+function isLose() {
+    computerScore++;
+    computerScore_span.textContent = computerScore;
+}
+
+function isDraw() {
+    console.log("DRAW")
+}
+
 //add function game(). THis function will run the game logic
 function game(playerChoice) {
     const computerChoice = getComputerChoice();
