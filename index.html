@@ -17,31 +17,32 @@
 
 <body>
     <header>
-        <h1>ROCK PAPER SCISSORS</h1>
+        <h1>JAN KEN PON!</h1>
     </header>
     <main>
-        <div class="scoreboard">
-            <h2 class="score-info" id="scoreInfo">Jan Ken Pon</h2>
-            <h3 class="score-message" id="scoreMessage">Win 5 round to win the game</h3>
+        <div class="result-container">
+            <h2 class="result-info" id="result-info">Saisho wa gu!</h2>
+            <h3 class="result-message" id="result-message">Win 5 round to win the game</h3>
         </div>
         <div class="score-container">
             <div class="score-box">
-                <div class="sign" id="playerSign">❔</div>
-                <p class="score" id="playerScore">Player : 0</p>
+                <div class="sign" id="player-sign">❔</div>
+                <p class="score">Player score: <span id="player-Score">0</span></p>
             </div>
             <div class="score-box">
-                <div class="sign" id="computerSign">❔</div>
-                <p class="score" id="computerScore">Computer : 0</p>
+                <div class="sign" id="computer-sign">❔</div>
+                <p class="score">Computer score: <span id="computer-Score">0</span>
+                </p>
             </div>
         </div>
         <div class="buttons">
-            <button class="btn-sqr" id="rockBtn">✊</button>
-            <button class="btn-sqr" id="paperBtn">🤚</button>
-            <button class="btn-sqr" id="scissorsBtn">✌️</button>
+            <button class="btn-sqr" id="rock-btn">✊</button>
+            <button class="btn-sqr" id="paper-btn">🤚</button>
+            <button class="btn-sqr" id="scissors-btn">✌️</button>
         </div>
     </main>
-    <div class="modal" id="endGameModal">
-        <p class="endgameModal" id="endgameMsg">You won!</p>
+    <div class="endgame-text">
+        <p class="endgameModal" id="endgame-msg"></p>
     </div>
 
 </html>
