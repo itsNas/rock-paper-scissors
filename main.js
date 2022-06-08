@@ -20,12 +20,39 @@ function getComputerChoice() {
     return choices[randomChoice]
 }
 
+// add function convertSign() to display the sign
+function convertSign(playerChoice, computerChoice) {
+    switch (playerChoice) {
+        case "rock":
+            playerSign_div.textContent = "✊"
+            break;
+        case "paper":
+            playerSign_div.textContent = "🤚"
+            break;
+        case "scissors":
+            playerSign_div.textContent = "✌️"
+            break;
+    }
+    switch (computerChoice) {
+        case "rock":
+            computerSign_div.textContent = "✊"
+            break;
+        case "paper":
+            computerSign_div.textContent = "🤚"
+            break;
+        case "scissors":
+            computerSign_div.textContent = "✌️"
+            break;
+    }
+}
+
 function getCapitalLetter(string) {
     if (string === "rock") return "Rock";
     if (string === "paper") return "Paper";
     return "Scissors";
 }
 
+//add function isWin(), isLose() and isDraw() to display the score and message.
 function isWin(playerChoice, computerChoice) {
     playerScore++;
     playerScore_span.textContent = playerScore;
@@ -45,9 +72,20 @@ function isDraw(computerChoice) {
     resultMessage_h3.textContent = `You both chose ${getCapitalLetter(computerChoice)}`
 }
 
+
+function isGameOver(playerScore, computerScore) {
+    if (playerScore === 5) {
+        return endgameMsg_p.textContent = "You won the game!"
+    } else if (computerScore === 5) {
+        return endgameMsg_p.textContent = "You lost the game!"
+    }
+}
+
 //add function game(). THis function will run the game logic
 function game(playerChoice) {
     const computerChoice = getComputerChoice();
+    const rpsSign = convertSign(playerChoice, computerChoice);
+    const gameOver = isGameOver(playerScore, computerScore);
 
     //add switch to compare playerChoice and computerChoice
     switch (playerChoice + ' ' + computerChoice) {
