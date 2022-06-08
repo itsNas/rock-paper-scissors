@@ -12,6 +12,7 @@ const rockBtn = document.getElementById('rock-btn');
 const paperBtn = document.getElementById('paper-btn');
 const scissorsBtn = document.getElementById('scissors-btn');
 const endgameMsg_p = document.getElementById('endgame-msg');
+const replayBtn = document.getElementById('replay-btn');
 
 //add function getComputerChoice
 function getComputerChoice() {
@@ -69,23 +70,42 @@ function isLose(playerChoice, computerChoice) {
 
 function isDraw(computerChoice) {
     resultInfo_h2.textContent = "Draw!"
-    resultMessage_h3.textContent = `You both chose ${getCapitalLetter(computerChoice)}`
+    resultMessage_h3.textContent = `You both choose ${getCapitalLetter(computerChoice)}`
 }
 
+function getWinner(playerScore, computerScore) {
+    if (playerScore > computerScore) {
+        return endgameMsg_p.textContent = 'You win the game!'
+    } else {
+        return endgameMsg_p.textContent = 'You lose the game!'
+    }
+}
+
+function disableBtn() {
+    rockBtn.disabled = true
+    paperBtn.disabled = true
+    scissorsBtn.disabled = true
+}
 
 function isGameOver(playerScore, computerScore) {
-    if (playerScore === 5) {
-        return endgameMsg_p.textContent = "You won the game!"
-    } else if (computerScore === 5) {
-        return endgameMsg_p.textContent = "You lost the game!"
+    if (playerScore === 5 || computerScore === 5) {
+        getWinner(playerScore, computerScore)
+        disableBtn();
+        replayBtn.style.visibility = 'visible';
     }
+
+}
+
+function resetGame() {
+    replayBtn.addEventListener('click', () => {
+        window.location.reload()
+    })
 }
 
 //add function game(). THis function will run the game logic
 function game(playerChoice) {
     const computerChoice = getComputerChoice();
-    const rpsSign = convertSign(playerChoice, computerChoice);
-    const gameOver = isGameOver(playerScore, computerScore);
+    convertSign(playerChoice, computerChoice);
 
     //add switch to compare playerChoice and computerChoice
     switch (playerChoice + ' ' + computerChoice) {
@@ -105,7 +125,10 @@ function game(playerChoice) {
             isDraw(computerChoice)
             break;
     }
+    isGameOver(playerScore, computerScore);
+    resetGame()
 }
+
 //addEventListener. This will run the function game() after click
 function main() {
     rockBtn.addEventListener('click', function () {
