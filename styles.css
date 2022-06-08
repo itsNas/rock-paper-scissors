@@ -1,8 +1,4 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 
 body {
     background-color: rgb(24, 24, 23);
@@ -15,6 +11,7 @@ body {
 header {
     text-align: center;
     font-size: 1.5rem;
+    font-family: Concert One, sans-serif;
     background-color: rgb(124, 33, 68);
     color: rgb(231, 220, 220)
 }
@@ -26,6 +23,7 @@ main {
 .result-container {
     text-align: center;
     font-size: 2rem;
+    font-family: Concert One, sans-serif;
     color: rgb(231, 220, 220);
 }
 
@@ -43,6 +41,7 @@ main {
 .score-box {
     text-align: center;
     font-size: 2rem;
+    font-family: Concert One, sans-serif;
     color: rgb(231, 220, 220);
 }
 
@@ -57,7 +56,7 @@ main {
 }
 
 .btn-sqr {
-    border: 4px solid;
+    border: 4px solid rgb(177, 171, 171);
     outline: none;
     cursor: pointer;
     font-size: 5rem;
@@ -77,21 +76,22 @@ main {
 .endgame-text {
     text-align: center;
     font-size: 2rem;
-    margin-top: 50px;
+    font-family: Concert One, sans-serif;
+    margin: 50px;
     color: rgb(231, 220, 220);
 }
 
 .replay {
     background: none;
-    border: 2px solid black;
+    border: 2px solid rgb(177, 171, 171);
     outline: none;
     cursor: pointer;
     font-size: 1.5rem;
-    margin: 50px;
+    font-family: Concert One, sans-serif;
     background-color: rgb(124, 33, 68);
     border-radius: 15px;
-    height: 50px;
-    width: 150px;
+    padding-top: 10px;
+    padding-bottom: 20px;
     color: white;
     visibility: hidden;
 }
@@ -103,8 +103,9 @@ main {
 
 footer {
     margin-top: auto;
-    color: white;
+    color: rgb(231, 220, 220);
     background-color: rgb(124, 33, 68);
     text-align: center;
+    font-family: Concert One, sans-serif;
     padding: 2px;
 }
