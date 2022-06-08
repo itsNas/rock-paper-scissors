@@ -1,17 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: bisque;
 }
 
 
 header {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: brown;
+    padding: 20px
+}
+
+main {
+    margin-top: 30px;
+}
+
+.result-container {
+    text-align: center;
     font-size: 1.5rem;
 }
 
-.scoreboard {
+.score-box {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .score-container {
@@ -19,6 +35,10 @@ header {
     justify-content: center;
     gap: 50px;
     margin-top: 50px;
+}
+
+.sign {
+    font-size: 5rem;
 }
 
 .buttons {
@@ -35,18 +55,17 @@ header {
     font-size: 5rem;
     transition: 100ms;
     margin-top: 50px;
+    background-color: brown;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
 }
 
 .btn-sqr:hover {
     transform: scale(1.4);
 }
 
-.score-box {
-    text-align: center;
-    font-size: 2rem;
-}
-
-.modal {
+.endgame-text {
     text-align: center;
     font-size: 2rem;
     margin-top: 50px;
