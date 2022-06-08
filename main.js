@@ -23,8 +23,25 @@ function getComputerChoice() {
 //add function game(). THis function will run the game logic
 function game(playerChoice) {
     const computerChoice = getComputerChoice();
-    console.log("player==>" + playerChoice)
-    console.log("computer==>" + computerChoice);
+
+    //add switch to compare playerChoice and computerChoice
+    switch (playerChoice + ' ' + computerChoice) {
+        case "rock scissors":
+        case "paper rock":
+        case "scissors paper":
+            isWin()
+            break;
+        case "rock paper":
+        case "paper scissors":
+        case "scissors rock":
+            isLose()
+            break;
+        case "rock rock":
+        case "paper paper":
+        case "scissors scissors":
+            isDraw()
+            break;
+    }
 }
 //addEventListener. This will run the function game() after click
 function main() {
